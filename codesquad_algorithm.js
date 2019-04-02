@@ -16,3 +16,21 @@ var a = Number(input[0]);
 var b = Number(input[1]);
 console.log(a-b);
 // 3. 표준입력 1 2를 받아서 1-2 출력
+
+
+function solution(a, b) {
+    var result = 0;
+    if(a > b){
+        for(let i = b; i <= a; i++){
+            result += i
+        }
+    }else if(a < b){
+        for(let i = a; i <= b; i++){
+            result += i
+        }
+    }else{
+        return a
+    }
+    return result
+}
+// 4. 두 정수 사이의 합
