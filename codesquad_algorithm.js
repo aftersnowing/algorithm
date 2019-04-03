@@ -92,4 +92,40 @@ console.log(fulladder(0,0,1)); // [0, 1]
 console.log(fulladder(0,1,0)); // [0, 1]
 console.log(fulladder(1,0,0)); // [0, 1]
 console.log(fulladder(0,0,0)); // [0, 0]
-// 5. 이진덧셈기 전가산기 구현
+// 6. 이진덧셈기 전가산기 구현
+
+
+
+function byteadder(byteA, byteB) {
+    function fulladder(bitA, bitB, carrybit) {
+        var sum = 0;
+        if(bitA + bitB + carrybit === 3){
+            carry = 1;
+            sum = 1;
+        }else if(bitA + bitB + carrybit === 2){
+            carry = 1;
+            sum = 0;
+        }else if(bitA + bitB + carrybit === 1){
+            carry = 0;
+            sum = 1;
+        }else if(bitA + bitB + carrybit === 0){
+            carry = 0;
+            sum = 0;
+        }
+        result.push(sum);
+    }
+    var result = [];
+    var carry = 0;
+
+    byteA.forEach((el,i) =>{
+        fulladder(el, byteB[i], carry)
+    })
+    result.push(carry);
+    return result;
+}
+
+console.log(byteadder([ 1, 1, 0, 1, 1, 0, 1, 0 ], [ 1, 0, 1, 1, 0, 0, 1, 1 ])); 
+// [ 0, 0, 0, 1, 0, 1, 0, 0, 1 ]
+console.log(byteadder([ 1, 1, 0, 0, 1, 0, 1, 0 ], [ 1, 1, 0, 1, 1, 0, 0, 1 ])); 
+// [ 0, 1, 1, 1, 0, 1, 1, 1, 0 ]
+// 7. 이진덧셈기 8비트 덧셈기를 구현
