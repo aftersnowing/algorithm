@@ -2,6 +2,7 @@ console.log('Hello World!');
 // 1. Hello World!를 출력하세요aa
 
 
+
 var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' ');
 var a = parseInt(input[0]);
@@ -10,12 +11,14 @@ console.log(a+b);
 // 2. 표준입력을 1 2 를 받아서 3을 출력
 
 
+
 var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' ');
 var a = Number(input[0]);
 var b = Number(input[1]);
 console.log(a-b);
 // 3. 표준입력 1 2를 받아서 1-2 출력
+
 
 
 function solution(a, b) {
@@ -129,3 +132,17 @@ console.log(byteadder([ 1, 1, 0, 1, 1, 0, 1, 0 ], [ 1, 0, 1, 1, 0, 0, 1, 1 ]));
 console.log(byteadder([ 1, 1, 0, 0, 1, 0, 1, 0 ], [ 1, 1, 0, 1, 1, 0, 0, 1 ])); 
 // [ 0, 1, 1, 1, 0, 1, 1, 1, 0 ]
 // 7. 이진덧셈기 8비트 덧셈기를 구현
+
+
+
+function dec2bin(decimal) {
+    var answer = [];
+    while(decimal > 0){
+        answer.push(decimal % 2);
+        decimal = Math.floor(decimal / 2);
+    }
+    return answer;
+}
+console.log(dec2bin(10)); // [0, 1, 0, 1]
+console.log(dec2bin(173)); // [1,0,1,1,0,1,0,1]
+//8. 진법 변환기 10진수를 2진수 변환 구현
