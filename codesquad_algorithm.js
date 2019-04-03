@@ -126,7 +126,6 @@ function byteadder(byteA, byteB) {
     result.push(carry);
     return result;
 }
-
 console.log(byteadder([ 1, 1, 0, 1, 1, 0, 1, 0 ], [ 1, 0, 1, 1, 0, 0, 1, 1 ])); 
 // [ 0, 0, 0, 1, 0, 1, 0, 0, 1 ]
 console.log(byteadder([ 1, 1, 0, 0, 1, 0, 1, 0 ], [ 1, 1, 0, 1, 1, 0, 0, 1 ])); 
@@ -161,3 +160,12 @@ function bin2dec(bin) {
 console.log(bin2dec([0, 1, 1, 1])); // 14
 console.log(bin2dec([1, 1, 1, 1, 0, 1, 0 ,1])) // 175
 //9. 진법 변환기 2진수를 10진수로 변환 구현
+
+
+
+function reverseArray(a) {
+    return a.reverse();
+}
+console.log([1, 4, 3, 2]) // [2, 3, 4, 1]
+//10. 알고리즘 1-2 주어진 배열을 역배열로 출력
+
