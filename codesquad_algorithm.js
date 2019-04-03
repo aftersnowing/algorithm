@@ -34,3 +34,29 @@ function solution(a, b) {
     return result
 }
 // 4. 두 정수 사이의 합
+
+
+
+function halfadder(bitA, bitB) {
+    var carry = 0;
+    var sum = 0;
+    var answer = [];
+    if(bitA + bitB === 2){
+        carry = 1;
+        sum = 0;
+    }else if(bitA + bitB === 1){
+        carry = 0;
+        sum = 1;
+    }else if(bitA + bitB){
+        carry = 0;
+        sum = 0;
+    }
+    answer[0] = carry;
+    answer[1] = sum;
+    return answer
+}
+console.log(halfadder(1,1)) // [1,0]
+console.log(halfadder(0,1)) // [0,1]
+console.log(halfadder(1,0)) // [0,1]
+console.log(halfadder(0,0)) // [0,0]
+// 이진덧셈기 반가산기 구현
