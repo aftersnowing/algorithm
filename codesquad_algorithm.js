@@ -146,3 +146,18 @@ function dec2bin(decimal) {
 console.log(dec2bin(10)); // [0, 1, 0, 1]
 console.log(dec2bin(173)); // [1,0,1,1,0,1,0,1]
 //8. 진법 변환기 10진수를 2진수 변환 구현
+
+
+
+function bin2dec(bin) {
+    var result = bin[0];
+    for(var i = 1; i < bin.length; i++){
+        if(bin[i]){
+            result += Math.pow(2, i)
+        }
+    }
+    return result;
+}
+console.log(bin2dec([0, 1, 1, 1])); // 14
+console.log(bin2dec([1, 1, 1, 1, 0, 1, 0 ,1])) // 175
+//9. 진법 변환기 2진수를 10진수로 변환 구현
