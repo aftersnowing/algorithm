@@ -59,4 +59,37 @@ console.log(halfadder(1,1)) // [1,0]
 console.log(halfadder(0,1)) // [0,1]
 console.log(halfadder(1,0)) // [0,1]
 console.log(halfadder(0,0)) // [0,0]
-// 이진덧셈기 반가산기 구현
+// 5. 이진덧셈기 반가산기 구현
+
+
+
+function fulladder(bitA, bitB, carrybit) {
+    var carry = 0;
+    var sum = 0;
+    var answer = [];
+    if(bitA + bitB + carrybit === 3){
+        carry = 1;
+        sum = 1;
+    }else if(bitA + bitB + carrybit === 2){
+        carry = 1;
+        sum = 0;
+    }else if(bitA + bitB + carrybit === 1){
+        carry = 0;
+        sum = 1;
+    }else if(bitA + bitB + carrybit === 0){
+        carry = 0;
+        sum = 0;
+    }
+    answer[0] = carry;
+    answer[1] = sum;
+    return answer
+}
+console.log(fulladder(1,1,1)); // [1, 1]
+console.log(fulladder(0,1,1)); // [1, 0]
+console.log(fulladder(1,0,1)); // [1, 0]
+console.log(fulladder(1,1,0)); // [1, 0]
+console.log(fulladder(0,0,1)); // [0, 1]
+console.log(fulladder(0,1,0)); // [0, 1]
+console.log(fulladder(1,0,0)); // [0, 1]
+console.log(fulladder(0,0,0)); // [0, 0]
+// 5. 이진덧셈기 전가산기 구현
