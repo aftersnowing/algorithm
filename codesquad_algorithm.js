@@ -1,42 +1,15 @@
-console.log('Hello World!');
-// 1. Hello World!를 출력하세요aa
 
 
 
-var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' ');
-var a = parseInt(input[0]);
-var b = parseInt(input[1]);
-console.log(a+b);
-// 2. 표준입력을 1 2 를 받아서 3을 출력
 
 
 
-var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' ');
-var a = Number(input[0]);
-var b = Number(input[1]);
-console.log(a-b);
-// 3. 표준입력 1 2를 받아서 1-2 출력
 
 
 
-function solution(a, b) {
-    var result = 0;
-    if(a > b){
-        for(let i = b; i <= a; i++){
-            result += i
-        }
-    }else if(a < b){
-        for(let i = a; i <= b; i++){
-            result += i
-        }
-    }else{
-        return a
-    }
-    return result
-}
-// 4. 두 정수 사이의 합
+
+
+
 
 
 
@@ -162,10 +135,71 @@ console.log(bin2dec([1, 1, 1, 1, 0, 1, 0 ,1])) // 175
 //9. 진법 변환기 2진수를 10진수로 변환 구현
 
 
+function decAdder(A, B) {
+    function bin2dec(bin) {
+        var result = bin[0];
+        for(var i = 1; i < bin.length; i++){
+            if(bin[i]){
+                result += Math.pow(2, i)
+            }
+        }
+        return result;
+    }
+
+    function dec2bin(decimal) {
+        var answer = [];
+        while(decimal > 0){
+            answer.push(decimal % 2);
+            decimal = Math.floor(decimal / 2);
+        }
+        return answer;
+    }
+
+    var byteA = dec2bin(A);
+    var byteB = dec2bin(B);
+    function fulladder(bitA, bitB, carrybit) {
+        var sum = 0;
+        if(bitA + bitB + carrybit === 3){
+            carry = 1;
+            sum = 1;
+        }else if(bitA + bitB + carrybit === 2){
+            carry = 1;
+            sum = 0;
+        }else if(bitA + bitB + carrybit === 1){
+            carry = 0;
+            sum = 1;
+        }else if(bitA + bitB + carrybit === 0){
+            carry = 0;
+            sum = 0;
+        }
+        result.push(sum);
+    }
+
+    var result = [];
+    var carry = 0;
+    if(byteA.length > byteB.length){
+        byteA.forEach((el,i) =>{byteB[i] !== undefined ? 
+            fulladder(el, byteB[i], carry) : 
+            fulladder(el, 0, carry)
+        })
+    }else {
+        byteB.forEach((el,i) =>{byteA[i] !== undefined ? 
+            fulladder(el, byteA[i], carry) : 
+            fulladder(el, 0, carry)
+        })
+    } 
+    result.push(carry);
+    return bin2dec(result);
+}
+console.log(decAdder(30,50));
+console.log(decAdder(54,66));
+// 10. 이진 덧셈기에 입력과 출력에 연결해서 10진수 덧셈 구현
+
+
 
 function reverseArray(a) {
     return a.reverse();
 }
 console.log([1, 4, 3, 2]) // [2, 3, 4, 1]
-//10. 알고리즘 1-2 주어진 배열을 역배열로 출력
+//11. 알고리즘 1-2 주어진 배열을 역배열로 출력
 
