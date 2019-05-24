@@ -18,6 +18,7 @@ function gradingStudents(grades) {
     }
     return newArr;
 }
+// Grading Students
 // Sample Input 0
 
 // 4
