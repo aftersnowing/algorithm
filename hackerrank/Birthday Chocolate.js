@@ -1,6 +1,6 @@
 function birthday(s, d, m) {
   let count = 0;
-  for (let i = 0; i + m < s.length; i++) {
+  for (let i = 0; i + m <= s.length; i++) {
     let sum = 0;
     for (let j = i; j < i + m; j++) {
       sum += s[j];
